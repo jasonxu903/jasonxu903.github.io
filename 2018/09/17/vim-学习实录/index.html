@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="代码注释本">
 <meta property="og:description" content="记录一下学习 vim 的过程，加深每个命令的记忆，也方便以后查看。 顺便也熟悉一下 minila。 :)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-19T13:30:11.309Z">
+<meta property="og:updated_time" content="2018-09-20T13:51:08.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim 学习实录">
 <meta name="twitter:description" content="记录一下学习 vim 的过程，加深每个命令的记忆，也方便以后查看。 顺便也熟悉一下 minila。 :)">
@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-19 21:30:11" itemprop="dateModified" datetime="2018-09-19T21:30:11+08:00">2018-09-19</time>
+                <time title="修改时间：2018-09-20 21:51:08" itemprop="dateModified" datetime="2018-09-20T21:51:08+08:00">2018-09-20</time>
               
             
           </span>
@@ -518,6 +518,34 @@
 <li><code>c$</code> 命令就是从光标处开始一直删除到本行末尾（包括光标处字符），让后转换到插入模式开始输入。</li>
 <li><code>c</code> 命令也可以组合数字使用，如 <code>2cw</code> <code>4ce</code> 等。</li>
 </ol>
+<h2 id="第四讲"><a href="#第四讲" class="headerlink" title="第四讲"></a>第四讲</h2><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>定位命令字符是 <code>g</code>，其中：</p>
+<ol>
+<li>输入 <code>G</code> 会跳转到文本的最后一行；</li>
+<li>输入 <code>gg</code> 会跳转到文本的第一行；</li>
+<li>输入 <code>&lt;number&gt; G</code> 会跳转的指定行。</li>
+</ol>
+<p>另外，<code>ctrl-g</code> 命令可以查看光标当前所在行的行数，方便定位。</p>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p>向后搜索命令字符是 <code>/</code>，向前搜索命令字符是 <code>?</code>。</p>
+<p>以 <code>/</code> 命令为例：</p>
+<ol>
+<li>按下 <code>/</code> 键，编辑器由正常模式切换到输入模式；</li>
+<li>输入想要查找的字符串，按下回车，找到需要的文本；</li>
+<li>想要继续向后查找同一个字符串，按下命令字符 <code>n</code>，想要反方向查找统一字符串，按下命令字符 <code>N</code>；</li>
+<li>想要回到之前查找到的位置可以使用命令 <code>ctrl-o</code>，该命令可重复多次；</li>
+<li>想要回到较新的位置，可以使用命令 <code>ctrl-i</code>。</li>
+</ol>
+<h3 id="括号配对"><a href="#括号配对" class="headerlink" title="括号配对"></a>括号配对</h3><p>匹配括号的命令是 <code>%</code>，该命令会匹配 <code>()</code> <code>[]</code> <code>{}</code> 所有的括号对，即使多层括号嵌套，也可以正确匹配到配对的括号。只需在一个左括号或右括号上按下 <code>%</code> 即可。</p>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><p>基本的替换操作命令如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s/old/new/g</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<ol>
+<li><code>:s</code> 是替换操作的操作命令；</li>
+<li><code>old</code> 是目标字符；</li>
+<li><code>new</code> 是替换字符；</li>
+<li><code>/g</code> 是全部替换命令，这是一个可选项。</li>
+</ol>
+<p>注意，该命令仅限光标当前所在行的行内替换，如需多行替换，则如下操作：</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">:#,#s/<span class="keyword">old</span>/<span class="keyword">new</span>/g  <span class="comment">// 其中 #,# 代表需要进行替换操作的首位两行的行号。</span></span><br><span class="line"></span><br><span class="line">:%s/<span class="keyword">old</span>/<span class="keyword">new</span>/g  <span class="comment">// 该操作会替换文本内的所有目标字符。</span></span><br><span class="line">:%s/<span class="keyword">old</span>/<span class="keyword">new</span>/gc  <span class="comment">// 该操作会匹配文本内所有目标字符串，并对每个匹配的字符串询问是否替换。</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -713,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础教程"><span class="nav-number">1.</span> <span class="nav-text">基础教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一讲"><span class="nav-number">1.1.</span> <span class="nav-text">第一讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-number">1.1.1.</span> <span class="nav-text">光标移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入及退出"><span class="nav-number">1.1.2.</span> <span class="nav-text">进入及退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除和插入"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除和插入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二讲"><span class="nav-number">1.2.</span> <span class="nav-text">第二讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令和对象"><span class="nav-number">1.2.1.</span> <span class="nav-text">命令和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数动作"><span class="nav-number">1.2.3.</span> <span class="nav-text">计数动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">1.2.4.</span> <span class="nav-text">撤销命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三讲"><span class="nav-number">1.3.</span> <span class="nav-text">第三讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#置入类命令"><span class="nav-number">1.3.1.</span> <span class="nav-text">置入类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换类命令"><span class="nav-number">1.3.2.</span> <span class="nav-text">替换类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改类命令"><span class="nav-number">1.3.3.</span> <span class="nav-text">更改类命令</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础教程"><span class="nav-number">1.</span> <span class="nav-text">基础教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一讲"><span class="nav-number">1.1.</span> <span class="nav-text">第一讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-number">1.1.1.</span> <span class="nav-text">光标移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入及退出"><span class="nav-number">1.1.2.</span> <span class="nav-text">进入及退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除和插入"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除和插入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二讲"><span class="nav-number">1.2.</span> <span class="nav-text">第二讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令和对象"><span class="nav-number">1.2.1.</span> <span class="nav-text">命令和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数动作"><span class="nav-number">1.2.3.</span> <span class="nav-text">计数动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">1.2.4.</span> <span class="nav-text">撤销命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三讲"><span class="nav-number">1.3.</span> <span class="nav-text">第三讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#置入类命令"><span class="nav-number">1.3.1.</span> <span class="nav-text">置入类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换类命令"><span class="nav-number">1.3.2.</span> <span class="nav-text">替换类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改类命令"><span class="nav-number">1.3.3.</span> <span class="nav-text">更改类命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四讲"><span class="nav-number">1.4.</span> <span class="nav-text">第四讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位"><span class="nav-number">1.4.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">1.4.2.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#括号配对"><span class="nav-number">1.4.3.</span> <span class="nav-text">括号配对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换"><span class="nav-number">1.4.4.</span> <span class="nav-text">替换</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
