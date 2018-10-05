@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="代码注释本">
 <meta property="og:description" content="记录一下学习 vim 的过程，加深每个命令的记忆，也方便以后查看。 顺便也熟悉一下 minila。 :)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-28T12:55:09.158Z">
+<meta property="og:updated_time" content="2018-10-05T08:51:04.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim 学习实录">
 <meta name="twitter:description" content="记录一下学习 vim 的过程，加深每个命令的记忆，也方便以后查看。 顺便也熟悉一下 minila。 :)">
@@ -399,7 +399,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-28 20:55:09" itemprop="dateModified" datetime="2018-09-28T20:55:09+08:00">2018-09-28</time>
+                <time title="修改时间：2018-10-05 16:51:04" itemprop="dateModified" datetime="2018-10-05T16:51:04+08:00">2018-10-05</time>
               
             
           </span>
@@ -564,6 +564,34 @@
 <p>对于可视模式中选中的字符，按一次 <code>d</code> 命令即可删除。</p>
 <h3 id="提取和合并文件"><a href="#提取和合并文件" class="headerlink" title="提取和合并文件"></a>提取和合并文件</h3><p>命令 <code>:r &lt;FileName&gt;</code> 可以将名为 <code>FileName</code> 的文件中的字符插入到当前文件中，插入位置就是光标所在位置。</p>
 <p>该命令还可以读取外部命令的输出并插入，如 <code>:r !ls</code>。</p>
+<h2 id="第六讲"><a href="#第六讲" class="headerlink" title="第六讲"></a>第六讲</h2><h3 id="打开新的一行并插入"><a href="#打开新的一行并插入" class="headerlink" title="打开新的一行并插入"></a>打开新的一行并插入</h3><p>输入命令 <code>o</code> 可以在光标所在行的下一行建立一个新行并切换到插入模式，用于输入新的文字。</p>
+<p>命令 <code>O</code> 则是在光标所在行的上一行产生效果。</p>
+<h3 id="在光标后插入"><a href="#在光标后插入" class="headerlink" title="在光标后插入"></a>在光标后插入</h3><p>输入命令 <code>a</code> 会将编辑器切换的插入模式，文字将被插入到光标之后，和命令 <code>i</code> 的插入位置不同。</p>
+<blockquote>
+<p>稍作延展，命令 <code>A</code> 将在行末插入文字，而命令 <code>I</code> 则是在行首插入文字。</p>
+</blockquote>
+<h3 id="另一个替换类命令"><a href="#另一个替换类命令" class="headerlink" title="另一个替换类命令"></a>另一个替换类命令</h3><p>在第三讲中，我们讲解过一个替换命令 <code>r</code>，该命令的大写命令 <code>R</code> 也具有相似的效果，不同的地方在于：</p>
+<ul>
+<li>命令 <code>R</code> 在退回到正常模式前会一直处于替换模式，输入的字符将替换光标处的字符，所以该命令用于多字符的替换操作，而 <code>r</code> 命令用于单字符的替换；</li>
+<li>命令 <code>R</code> 在替换过程中使用回退健并不会删除字符，而是将该位置的字符会退到替换之前的状态。</li>
+</ul>
+<h3 id="复制粘贴"><a href="#复制粘贴" class="headerlink" title="复制粘贴"></a>复制粘贴</h3><p>命令 <code>y</code> 用于复制字符，或者换一种说法叫“把字符抽取出来”。该命令有以下几种常见用法：</p>
+<ol>
+<li>与可视模式搭配使用；</li>
+<li>与 <code>w</code> 等命令搭配使用（ <code>yw</code> ）；</li>
+<li>与行首行末操作符搭配使用（ <code>y$</code> ）。</li>
+</ol>
+<p>命令 <code>p</code> 用于把命令 <code>y</code> 复制出来的字符粘贴到光标所在处。</p>
+<h3 id="设置类命令的选项"><a href="#设置类命令的选项" class="headerlink" title="设置类命令的选项"></a>设置类命令的选项</h3><p>输入 <code>set:xxx</code> 可以设置 <code>xxx</code> 选项，下面以搜索命令为例展示几个有用的命令。</p>
+<ul>
+<li><code>ic</code>: <code>ignorecase</code>，在搜索时忽略字母大小写；</li>
+<li><code>is</code>: <code>incsearch</code>，查找短语时显示部分匹配的项；</li>
+<li><code>hls</code>: <code>highlightsearch</code>，高亮显示匹配短语。</li>
+</ul>
+<p>如果想要关闭某个选项，只需要输入 <code>set:noxxx</code> 即可。</p>
+<blockquote>
+<p>更多的选项类命令未来接触到再详细说明。</p>
+</blockquote>
 
       
     </div>
@@ -759,7 +787,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础教程"><span class="nav-number">1.</span> <span class="nav-text">基础教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一讲"><span class="nav-number">1.1.</span> <span class="nav-text">第一讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-number">1.1.1.</span> <span class="nav-text">光标移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入及退出"><span class="nav-number">1.1.2.</span> <span class="nav-text">进入及退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除和插入"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除和插入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二讲"><span class="nav-number">1.2.</span> <span class="nav-text">第二讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令和对象"><span class="nav-number">1.2.1.</span> <span class="nav-text">命令和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数动作"><span class="nav-number">1.2.3.</span> <span class="nav-text">计数动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">1.2.4.</span> <span class="nav-text">撤销命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三讲"><span class="nav-number">1.3.</span> <span class="nav-text">第三讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#置入类命令"><span class="nav-number">1.3.1.</span> <span class="nav-text">置入类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换类命令"><span class="nav-number">1.3.2.</span> <span class="nav-text">替换类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改类命令"><span class="nav-number">1.3.3.</span> <span class="nav-text">更改类命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四讲"><span class="nav-number">1.4.</span> <span class="nav-text">第四讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位"><span class="nav-number">1.4.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">1.4.2.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#括号配对"><span class="nav-number">1.4.3.</span> <span class="nav-text">括号配对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换"><span class="nav-number">1.4.4.</span> <span class="nav-text">替换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五讲"><span class="nav-number">1.5.</span> <span class="nav-text">第五讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-vim-内执行外部命令"><span class="nav-number">1.5.1.</span> <span class="nav-text">在 vim 内执行外部命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多的保存文件的信息"><span class="nav-number">1.5.2.</span> <span class="nav-text">更多的保存文件的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视模式"><span class="nav-number">1.5.3.</span> <span class="nav-text">可视模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取和合并文件"><span class="nav-number">1.5.4.</span> <span class="nav-text">提取和合并文件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础教程"><span class="nav-number">1.</span> <span class="nav-text">基础教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一讲"><span class="nav-number">1.1.</span> <span class="nav-text">第一讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光标移动"><span class="nav-number">1.1.1.</span> <span class="nav-text">光标移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入及退出"><span class="nav-number">1.1.2.</span> <span class="nav-text">进入及退出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除和插入"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除和插入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二讲"><span class="nav-number">1.2.</span> <span class="nav-text">第二讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令和对象"><span class="nav-number">1.2.1.</span> <span class="nav-text">命令和对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除命令"><span class="nav-number">1.2.2.</span> <span class="nav-text">删除命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计数动作"><span class="nav-number">1.2.3.</span> <span class="nav-text">计数动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销命令"><span class="nav-number">1.2.4.</span> <span class="nav-text">撤销命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三讲"><span class="nav-number">1.3.</span> <span class="nav-text">第三讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#置入类命令"><span class="nav-number">1.3.1.</span> <span class="nav-text">置入类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换类命令"><span class="nav-number">1.3.2.</span> <span class="nav-text">替换类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改类命令"><span class="nav-number">1.3.3.</span> <span class="nav-text">更改类命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四讲"><span class="nav-number">1.4.</span> <span class="nav-text">第四讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定位"><span class="nav-number">1.4.1.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">1.4.2.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#括号配对"><span class="nav-number">1.4.3.</span> <span class="nav-text">括号配对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换"><span class="nav-number">1.4.4.</span> <span class="nav-text">替换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五讲"><span class="nav-number">1.5.</span> <span class="nav-text">第五讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-vim-内执行外部命令"><span class="nav-number">1.5.1.</span> <span class="nav-text">在 vim 内执行外部命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更多的保存文件的信息"><span class="nav-number">1.5.2.</span> <span class="nav-text">更多的保存文件的信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可视模式"><span class="nav-number">1.5.3.</span> <span class="nav-text">可视模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取和合并文件"><span class="nav-number">1.5.4.</span> <span class="nav-text">提取和合并文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六讲"><span class="nav-number">1.6.</span> <span class="nav-text">第六讲</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开新的一行并插入"><span class="nav-number">1.6.1.</span> <span class="nav-text">打开新的一行并插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在光标后插入"><span class="nav-number">1.6.2.</span> <span class="nav-text">在光标后插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#另一个替换类命令"><span class="nav-number">1.6.3.</span> <span class="nav-text">另一个替换类命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复制粘贴"><span class="nav-number">1.6.4.</span> <span class="nav-text">复制粘贴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置类命令的选项"><span class="nav-number">1.6.5.</span> <span class="nav-text">设置类命令的选项</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
